@@ -1,0 +1,34 @@
+<nav class="navbar navbar-expand fixed-top border-bottom bg-light">
+
+    <div class="container">
+        <div class="d-flex w-100 justify-content-between">
+
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a href="/" class="nav-link fw-bold font-monospace">hloudBin</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/_profiler" class="nav-link">Profiler</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                {% if app.user %}
+                    <a href="/profile" class="nav-link link-dark font-monospace">
+                        @{{ app.user.username }}
+                    </a>
+                {% endif %}
+                </li>
+                <li>
+                    <a 
+                        href="{{ app.user ? url('app_logout') : url('app_login') }}" 
+                        class="nav-link">
+                        {{ app.user ? 'Logout' : 'Login' }}
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+
+</nav>

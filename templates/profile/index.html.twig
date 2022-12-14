@@ -1,0 +1,60 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Profile{% endblock %}
+
+{% block body %}
+
+    <div class="pt-6 min-vh-100">
+        <div class="container">
+            {{ form_start(profileUpdateForm) }}
+
+                <div class="row mb-3">
+                    <div class="col">
+                        <div class="form-floating">
+                            {{ form_widget(profileUpdateForm.username) }}
+                            <label for="profileUpdateFormprofile_update_form_username">Username</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col">
+                        <div class="form-floating">
+                            {{ form_widget(profileUpdateForm.firstName) }}
+                            <label for="profile_update_form_firstName">First name</label>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-floating">
+                            {{ form_widget(profileUpdateForm.lastName) }}
+                            <label for="profile_update_form_lastName">Last name</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col">
+                        <div class="form-floating">
+                            {{ form_widget(profileUpdateForm.email) }}
+                            <label for="profile_update_form_email">Email</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col">
+                        {# <div class="form-floating"> #}
+                            {{ form_widget(profileUpdateForm.photo) }}
+                            {# <label for="profile_update_form_photo">Profile picture</label> #}
+                        {# </div> #}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col text-center">
+                        <button type="submit" class="btn btn-lg btn-outline-dark mx-auto px-5">Update</button>
+                    </div>
+                </div>
+
+            {{ form_end(profileUpdateForm) }}
+        </div>
+    </div>
+
+
+{% endblock %}

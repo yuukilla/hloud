@@ -1,0 +1,6 @@
+{
+    "editor.fontSize": 14,
+    "editor.renderWhitespace": "none",
+    "editor.insertSpaces": true,
+    "editor.wordWrap": "bounded"
+}
