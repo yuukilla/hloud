@@ -3,11 +3,13 @@
 namespace App\Controller;
 
 use App\Entity\File;
+use App\Entity\User;
 use App\Form\ProfileUpdateFormType;
 use App\Service\FileService;
 use App\Service\UserService;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\File\Exception\FileException;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -54,18 +56,23 @@ class ProfileController extends AbstractController
             }
         }
         // get photo url
-        // unhandled no file exception
-        // TODO: add default profile picture
+        // better set default value in database
         $entityManager = $mr->getManager();
-        $photo = $entityManager->getRepository(File::class)->find($this->getUser()->getPhoto());
-        $imageURL = '/uploads/' . $photo->getFileName();
+        $bolHasPhoto = (bool)$entityManager->getRepository(User::class)->find($this->getUser())->getPhoto();
+        if ( !$bolHasPhoto ) {
+            $imageURL = '/uploads/default_photo.png';
+        } else {
+            $photo = $entityManager->getRepository(File::class)->find($this->getUser()->getPhoto());
+            $imageURL = '/uploads/' . $photo->getFileName();
+        }
+        
 
         // Render view
         return $this->render(
             'profile/index.html.twig',
             [
                 'profileUpdateForm' => $form->createView(),
-                'imageURL' => $imageURL ?: "path/to/default/photo.ext"
+                'imageURL' => $imageURL
             ]
         );
     }
