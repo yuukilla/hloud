@@ -12,7 +12,9 @@
                     <div class="col">
                         <div class="form-floating">
                             {{ form_widget(profileUpdateForm.username) }}
-                            <label for="profileUpdateFormprofile_update_form_username">Username</label>
+                            <label for="profileUpdateFormprofile_update_form_username">
+                                {% trans  from 'messages' %}Username{% endtrans %}
+                            </label>
                         </div>
                     </div>
                 </div>
@@ -20,13 +22,17 @@
                     <div class="col">
                         <div class="form-floating">
                             {{ form_widget(profileUpdateForm.firstName) }}
-                            <label for="profile_update_form_firstName">First name</label>
+                            <label for="profile_update_form_firstName">
+                                {% trans  from 'messages' %}First name{% endtrans %}
+                            </label>
                         </div>
                     </div>
                     <div class="col">
                         <div class="form-floating">
                             {{ form_widget(profileUpdateForm.lastName) }}
-                            <label for="profile_update_form_lastName">Last name</label>
+                            <label for="profile_update_form_lastName">
+                                {% trans  from 'messages' %}Last name{% endtrans %}
+                            </label>
                         </div>
                     </div>
                 </div>
@@ -34,7 +40,9 @@
                     <div class="col">
                         <div class="form-floating">
                             {{ form_widget(profileUpdateForm.email) }}
-                            <label for="profile_update_form_email">Email</label>
+                            <label for="profile_update_form_email">
+                                {% trans  from 'messages' %}Email{% endtrans %}
+                            </label>
                         </div>
                     </div>
                 </div>
