@@ -30,6 +30,9 @@ class File
     #[ORM\Column(type: Types::DATETIME_MUTABLE, nullable: true, options: ['default' => "current_timestamp"])]
     private ?\DateTimeInterface $date_uploaded = null;
 
+    #[ORM\Column(length: 255)]
+    private ?string $originalFileName = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -91,6 +94,18 @@ class File
     public function setDateUploaded(?\DateTimeInterface $date_uploaded): self
     {
         $this->date_uploaded = $date_uploaded;
+
+        return $this;
+    }
+
+    public function getOriginalFileName(): ?string
+    {
+        return $this->originalFileName;
+    }
+
+    public function setOriginalFileName(string $originalFileName): self
+    {
+        $this->originalFileName = $originalFileName;
 
         return $this;
     }

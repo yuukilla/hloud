@@ -24,15 +24,6 @@ class ProfileUpdateFormType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $user = $this->security->getUser();
-        // $builder
-        //     ->add('username')
-        //     ->add('roles')
-        //     ->add('password')
-        //     ->add('firstName')
-        //     ->add('lastName')
-        //     ->add('photo')
-        //     ->add('email')
-        // ;
         $builder
             ->add('username', TextType::class, [
                 'label' => false,
@@ -52,14 +43,6 @@ class ProfileUpdateFormType extends AbstractType
                     'value' => $user->getEmail()
                 ]
             ])
-            // ->add('plainPassword', PasswordType::class, [
-            //     'label' => false,
-            //     'attr' => [
-            //         'class' => 'form-control rounded-3',
-            //         'placeholder' => 'Password',
-            //         'autocomplete' => 'none', 
-            //     ]
-            // ])
             ->add('firstName', TextType::class, [
                 'label' => false,
                 'attr' => [

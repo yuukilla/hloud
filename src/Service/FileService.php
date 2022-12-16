@@ -38,6 +38,7 @@ class FileService
             $file->setFileExtension($uploadedFile->guessExtension());
             $file->setFileSize($fileSize);
             $file->setFileOwner($user);
+            $file->setOriginalFileName($safeFileName);
             $file->setDateUploaded(new DateTime());
             $entityManager->persist($file);
             $entityManager->flush();
@@ -48,6 +49,19 @@ class FileService
         }
 
         return $file->getId();
+    }
+
+    public function updateFileData(int $fileID, mixed $data)
+    {
+        $entityManager = $this->mr->getManager();
+        $file = $entityManager->getRepository(File::class)->find($fileID);
+        $safeName = $this->slugger->slug($data->getOriginalFileName());
+        $fileName = $safeName . '-' . uniqid() . '.' . $file->getFileExtension();
+        $file->setFileName($fileName);
+        $file->setOriginalFileName($safeName);
+        $entityManager->persist($file);
+        $entityManager->flush();
+
     }
 
     public function getTargetDirectory()

@@ -28,12 +28,6 @@ class ProfileController extends AbstractController
     #[Route('/profile', name: 'app_profile')]
     public function index( Request $request, ManagerRegistry $mr ): Response
     {
-        /**
-         * If user not authentificated
-         * redirect to route `app_login`
-         */
-        if (!$this->getUser())
-            return $this->redirectToRoute('app_login');
 
         // Create form
         $form = $this->createForm(ProfileUpdateFormType::class);

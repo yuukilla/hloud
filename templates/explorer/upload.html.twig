@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Explorer{% endblock %}
+
+{% block body %}
+
+    <div class="pt-6 container">
+        {{ form_start(explorerUploadForm) }}
+        <div class="form-floating mb-3">
+            {{ form_widget(explorerUploadForm.file) }}
+        </div>
+        <div class="form-floating">
+            <button type="submit" class="btn btn-outline-dark">Upload</button>
+        </div>
+        {{ form_end(explorerUploadForm) }}
+    </div>
+
+{% endblock %}
