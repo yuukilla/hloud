@@ -22,17 +22,13 @@
                     </tr>
                 </thead>
                 <tbody>
-                    {# {% for file in files %}
+                    {% for file in files %}
                         <tr>
                             <td>
                                 {{ file.originalFileName }}
                                 <a href="#" class="link-secondary">
                                     <i class="bi bi-pencil-square"></i>
                                 </a>
-                                {% for form in forms %}
-                                    {{ form_start(form.explorerUpdateForm) }}
-                                    {{ form_end(form.explorerUpdateForm) }}
-                                {% endfor %}
                             </td>
                             <td>
                                 {{ file.fileExtension }}
@@ -52,8 +48,8 @@
                                 </a>
                             </td>
                         </tr>
-                    {% endfor %} #}
-                    {% for form in forms %}
+                    {% endfor %}
+                    {# {% for form in forms %}
                         <tr>
                             <td>
                                 {{ form_start(form.explorerUpdateForm) }}
@@ -86,7 +82,7 @@
                             </td>
 
                         </tr>
-                    {% endfor %}
+                    {% endfor %} #}
                 </tbody>
             </table>
         {% endif %}
