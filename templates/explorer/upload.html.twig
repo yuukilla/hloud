@@ -4,15 +4,17 @@
 
 {% block body %}
 
-    <div class="pt-6 container">
-        {{ form_start(explorerUploadForm) }}
-        <div class="form-floating mb-3">
-            {{ form_widget(explorerUploadForm.file) }}
+    <div class="pt-6 min-vh-100">
+        <div class="container">
+            {{ form_start(explorerUploadForm) }}
+            <div class="mb-3">
+                {{ form_widget(explorerUploadForm.file) }}
+            </div>
+            <div class="form-floating">
+                <button type="submit" class="btn btn-outline-dark">Upload</button>
+            </div>
+            {{ form_end(explorerUploadForm) }}
         </div>
-        <div class="form-floating">
-            <button type="submit" class="btn btn-outline-dark">Upload</button>
-        </div>
-        {{ form_end(explorerUploadForm) }}
     </div>
 
 {% endblock %}
