@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% trans from 'messages' %}About{% endtrans %} {{ name }}{% endblock %}
+
+{% block body %}
+
+    <div class="container min-vh-100 d-flex justify-content-center align-items-center">
+        <h1>
+            {% trans from 'messages' %}About{% endtrans %} {{ name }}
+        </h1>
+        
+    </div>
+
+{% endblock %}

@@ -1,0 +1,35 @@
+<footer class="bg-dark text-light">
+    <div class="container">
+        <div class="row text-center py-4">
+            <div class="col-5">
+                
+            </div>
+            <div class="col-5">
+                
+            </div>
+            <div class="col text-start">
+                <div class="row">
+                    <a href="{{ url('app_about') }}" class="link text-decoration-none text-warning">
+                        {% trans from 'messages' %}About{% endtrans %} {{ name }}
+                    </a>
+                </div>
+                <div class="row">
+                    <a href="{{ url('app_contact') }}" class="link text-decoration-none text-warning">
+                        {% trans from 'messages' %}Contact{% endtrans %}
+                    </a>
+                </div>
+                <div class="row">
+                    <a href="{{ url('app_terms_of_service') }}" class="link text-decoration-none text-warning">
+                        {% trans from 'messages' %}Terms of service{% endtrans %}
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+        <div class="row">
+            <div class="col text-center text-muted">
+                &copy; 2022 Gabriels Kukutis.
+            </div>
+        </div>
+    </div>
+</footer>

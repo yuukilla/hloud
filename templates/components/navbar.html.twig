@@ -5,28 +5,23 @@
 
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a href="/" class="nav-link fw-bold ">{{ name }}</a>
+                    <a href="{{ url('app_home') }}" class="nav-link fw-bold ">{{ name }}</a>
                 </li>
                 <li class="nav-item">
-                    <a href="/explorer" class="nav-link">
+                    <a href="{{ url('app_explorer') }}" class="nav-link">
                         {% trans  from 'messages' %}Explorer{% endtrans %}
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="/about" class="nav-link">
-                        {% trans from 'messages' %}About{% endtrans %} {{ name }}
                     </a>
                 </li>
             </ul>
             <ul class="navbar-nav">
                 {% if app.user %}
                     <li class="nav-item">
-                        <a href="/explorer/upload" class="nav-link">
+                        <a href="{{ url('app_explorer_upload') }}" class="nav-link">
                             {% trans  from 'messages' %}Upload{% endtrans %}
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="/profile" class="nav-link link-dark">
+                        <a href="{{ url('app_profile') }}" class="nav-link link-dark">
                             @{{ app.user.username }}
                         </a>
                     </li>

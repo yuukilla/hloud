@@ -19,6 +19,8 @@ return [
     'Upload' => 'Augšupielādēt',
     'Explorer' => 'Pētnieks',
     'About' => 'Par',
+    'Contact' => 'Saziņa',
+    'Terms of service' => 'Lietošanas noteikumi',
     'File name' => 'Faila nosaukums',
     'File extension' => 'Faila paplašinājums',
     'File size' => 'Faila izmērs',
