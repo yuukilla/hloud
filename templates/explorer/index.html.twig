@@ -15,10 +15,18 @@
             <table class="table">
                 <thead>
                     <tr>
-                        <th scope="col">File name</th>
-                        <th scope="col">File Extension</th>
-                        <th scope="col">File Size</th>
-                        <th scope="col">Manage</th>
+                        <th scope="col">
+                            {% trans from 'messages' %}File name{% endtrans %}
+                        </th>
+                        <th scope="col">
+                            {% trans from 'messages' %}File extension{% endtrans %}
+                        </th>
+                        <th scope="col">
+                            {% trans from 'messages' %}File size{% endtrans %}
+                        </th>
+                        <th scope="col">
+                            {% trans from 'messages' %}Manage{% endtrans %}
+                        </th>
                     </tr>
                 </thead>
                 <tbody>
@@ -34,55 +42,21 @@
                                 {{ file.fileExtension }}
                             </td>
                             <td>
-                                {{ file.fileSize }}
+                                {{ file.fileSize }} Kib
                             </td>
                             <td>
                                 <a href="/uploads/{{ file.fileName }}" class="link-success" download>
                                     <i class="bi bi-cloud-arrow-down-fill"></i>
                                 </a>
-                                <a href="#" class="link-secondary">
+                                <a href="/uploads/{{ file.fileName }}" class="link-secondary">
                                     <i class="bi bi-eye-fill"></i>
                                 </a>
-                                <a href="#" class="link-danger">
+                                <a href="/explorer/delete/{{ file.id }}" class="link-danger">
                                     <i class="bi bi-trash-fill"></i>
                                 </a>
                             </td>
                         </tr>
                     {% endfor %}
-                    {# {% for form in forms %}
-                        <tr>
-                            <td>
-                                {{ form_start(form.explorerUpdateForm) }}
-                                    <div class="row">
-                                        <div class="col-10">
-                                            {{ form_widget(form.explorerUpdateForm.originalFileName) }}
-                                        </div>
-                                        <div class="col-2">
-                                            <button type="submit" class="btn btn-outline-dark">Update</button>
-                                        </div>
-                                    </div>
-                                {{ form_end(form.explorerUpdateForm) }}
-                            </td>
-                            <td>
-                                {{ form.file.fileExtension }}
-                            </td>
-                            <td>
-                                {{ form.file.fileSize }}
-                            </td>
-                            <td>
-                                <a href="/uploads/{{ form.file.fileName }}" class="link-success" download>
-                                    <i class="bi bi-cloud-arrow-down-fill"></i>
-                                </a>
-                                <a href="#" class="link-secondary">
-                                    <i class="bi bi-eye-fill"></i>
-                                </a>
-                                <a href="#" class="link-danger">
-                                    <i class="bi bi-trash-fill"></i>
-                                </a>
-                            </td>
-
-                        </tr>
-                    {% endfor %} #}
                 </tbody>
             </table>
         {% endif %}

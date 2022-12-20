@@ -15,7 +15,9 @@
                     <div class="col">
                         <div class="form-floating">
                             {{ form_widget(authentificationForm.username, { value: last_username }) }}
-                            <label for="authentification_form_username">Username</label>
+                            <label for="authentification_form_username">
+                                {% trans from 'messages'%}Username{% endtrans %}
+                            </label>
                         </div>
                     </div>
                 </div>
@@ -23,7 +25,9 @@
                     <div class="col">
                         <div class="form-floating">
                             {{ form_widget(authentificationForm.plainPassword) }}
-                            <label for="authentification_form_plainPassword">Password</label>
+                            <label for="authentification_form_plainPassword">
+                                {% trans from 'messages' %}Password{% endtrans %}
+                            </label>
                         </div>
                     </div>
                 </div>
@@ -34,24 +38,26 @@
                     <div class="col checkbox">
                         <label>
                             <input type="checkbox" name="_remember_me">
-                            Remember me
+                            {% trans from 'messages' %}Remember me{% endtrans %}
                         </label>
                     </div>
                     <div class="col text-end text-muted">
                             <small>
-                                Not a member yet?
+                                {% trans from 'messages' %}Not a member yet?{% endtrans %}
                                 <a href="{{ url('app_register') }}"
                                     class="link text-decoration-none"
                                     role="link"
                                 >
-                                    Sign up
+                                    {% trans from 'messages' %}Sign up{% endtrans %}
                                 </a>
                             </small>
                         </div>
                 </div>
                 <div class="row">
                     <div class="col text-center">
-                        <button class="btn btn-lg btn-outline-dark px-5" type="submit">Sign in</button>
+                        <button class="btn btn-lg btn-outline-dark px-5" type="submit">
+                            {% trans from 'messages' %}Sign in{% endtrans %}
+                        </button>
                     </div>
                 </div>
 
