@@ -24,6 +24,7 @@ services:
     App\Controller\ProfileController:
         arguments:
             $targetDirectory: '%uploads_dir%'
+            
     App\Controller\ExplorerController:
         arguments:
             $targetDirectory: '%uploads_dir%'

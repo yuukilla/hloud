@@ -28,6 +28,7 @@
 !/public/uploads/default_photo.png
 npm-debug.log
 yarn-error.log
+package-lock.json
 ###< symfony/webpack-encore-bundle ###
 
 ###> workspace ###

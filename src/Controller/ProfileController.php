@@ -42,7 +42,7 @@ class ProfileController extends AbstractController
             $userService->updateBaseData($this->getUser(), $form->getData());
 
             // check if form has photo attached
-            if ($form->get('photo')) {
+            if ($form->get('photo')->getData()) {
                 // create new record in hloud.file table
                 $fileService = new FileService($this->targetDirectory, $mr, $this->slugger);
                 $photoID = $fileService->uploadFile($form->get('photo')->getData(), $this->getUser());

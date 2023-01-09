@@ -24,5 +24,7 @@ return [
     'File name' => 'Faila nosaukums',
     'File extension' => 'Faila paplašinājums',
     'File size' => 'Faila izmērs',
-    'Manage' => 'Pārvaldīt'
+    'Manage' => 'Pārvaldīt',
+    'Save changes' => 'Saglabāt izmaiņas',
+    'Upload files' => 'Augšupielādēt failus'
 ];

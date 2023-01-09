@@ -4,65 +4,75 @@
 
 {% block body %}
 
-    <div class="pt-6 min-vh-100">
-        <div class="container">
+    <div class="min-vh-100 d-flex justify-content-center align-items-center">
+
+        <div class="card" style="max-width: 680px">
             {{ form_start(profileUpdateForm) }}
+                <div class="row g-0">
+                    <div class="col-5 p-3 d-flex justify-content-center align-items-center">
+                        <div>
+                            <div class="image-upload mb-3">
+                                <label for="profile_update_form_photo">
+                                    <img src="{{ imageURL }}" class="img-fluid rounded w-100 h-100">
+                                </label>
+                                {# IMAGE #}
+                                {{ form_widget(profileUpdateForm.photo) }}
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-outline-dark mx-auto px-5">
+                                    {% trans from 'messages' %}Save changes{% endtrans %}
+                                </button>
+                            </div>
+                        </div>
+                    </div>
 
-                <div class="row mb-3">
-                    <div class="col">
-                        <div class="form-floating">
-                            {{ form_widget(profileUpdateForm.username) }}
-                            <label for="profileUpdateFormprofile_update_form_username">
-                                {% trans  from 'messages' %}Username{% endtrans %}
-                            </label>
+                    <div class="col-7 p-3">
+                        <div class="row mb-2">
+                            <div class="col">
+                                <div class="form-floating">
+                                    {{ form_widget(profileUpdateForm.username) }}
+                                    <label for="profileUpdateFormprofile_update_form_username">
+                                        {% trans from 'messages' %}Username{% endtrans %}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col">
+                                <div class="form-floating">
+                                    {{ form_widget(profileUpdateForm.firstName) }}
+                                    <label for="profile_update_form_firstName">
+                                        {% trans from 'messages' %}First name{% endtrans %}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col">
+                                <div class="form-floating">
+                                    {{ form_widget(profileUpdateForm.lastName) }}
+                                    <label for="profile_update_form_lastName">
+                                        {% trans from 'messages' %}Last name{% endtrans %}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col">
+                                <div class="form-floating">
+                                    {{ form_widget(profileUpdateForm.email) }}
+                                    <label for="profile_update_form_email">
+                                        {% trans from 'messages' %}Email{% endtrans %}
+                                    </label>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="row mb-3">
-                    <div class="col">
-                        <div class="form-floating">
-                            {{ form_widget(profileUpdateForm.firstName) }}
-                            <label for="profile_update_form_firstName">
-                                {% trans  from 'messages' %}First name{% endtrans %}
-                            </label>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="form-floating">
-                            {{ form_widget(profileUpdateForm.lastName) }}
-                            <label for="profile_update_form_lastName">
-                                {% trans  from 'messages' %}Last name{% endtrans %}
-                            </label>
-                        </div>
-                    </div>
-                </div>
-                <div class="row mb-3">
-                    <div class="col">
-                        <div class="form-floating">
-                            {{ form_widget(profileUpdateForm.email) }}
-                            <label for="profile_update_form_email">
-                                {% trans  from 'messages' %}Email{% endtrans %}
-                            </label>
-                        </div>
-                    </div>
-                </div>
-                <div class="row mb-3">
-                    <div class="col">
-                        {# <div class="form-floating"> #}
-                            {{ form_widget(profileUpdateForm.photo) }}
-                            {# <label for="profile_update_form_photo">Profile picture</label> #}
-                        {# </div> #}
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col text-center">
-                        <button type="submit" class="btn btn-lg btn-outline-dark mx-auto px-5">Update</button>
-                    </div>
-                </div>
-
             {{ form_end(profileUpdateForm) }}
-            <img src="{{ imageURL }}" alt="" class="w-25">
+
         </div>
+
     </div>
 
 
